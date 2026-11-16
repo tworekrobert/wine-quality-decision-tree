@@ -59,6 +59,7 @@ The task is **supervised binary classification**: the tree has to say whether a 
 - **The tree finds about half of the good wines.** On the test set it found 96 of the 202 good wines and raised 122 false alarms among 862 average ones.
 - **Overfitting is clear.** With no depth limit the tree is perfect on training data (F1 = 1.00) but scores only 0.418 on validation data. The best depth, 12, still has a large gap (0.88 vs 0.435).
 - **The top settings are close.** The best five combinations are within 0.025 F1 of each other, which is less than the spread between folds (about 0.03 to 0.05). Depth matters a lot; leaf size matters little.
+- **Shallow trees ignore the leaf size.** In the full table, `max_depth = 2` gives the same result for all four leaf sizes and `max_depth = 3` for leaf sizes 1, 5 and 10. That is expected, not a copy-paste error: a tree this shallow has at most 4 (or 8) leaves, so every leaf holds many wines. In the training folds the smallest leaf has 175 wines at depth 2 and 14 at depth 3, and `min_samples_leaf` only changes the tree once it is larger than that.
 - **Alcohol matters most.** It accounts for 28% of the tree's decisions, three times more than the next measurement (volatile acidity, 9.4%). The very first question the tree asks is *alcohol ≤ 11.2%?*
 
 All numbers are in [`results/summary.json`](results/summary.json), and the full table of 24 combinations is in [`results/grid_search_results.csv`](results/grid_search_results.csv).
