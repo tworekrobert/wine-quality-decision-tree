@@ -94,7 +94,7 @@ The run takes about 10 seconds. It prints a short summary and writes the tables 
 | Step | What happens |
 | --- | --- |
 | 1. Data | Red and white wines are joined into one table. The 11 lab measurements are the input. |
-| 2. Cleaning | 1,179 rows (18%) are exact copies of another row and are removed (see *Design decisions*). |
+| 2. Cleaning | 1,177 rows (18%) are exact copies of another row and are removed (see *Design decisions*). |
 | 3. Target | Quality ≥ 7 becomes *good* (1), everything else *not good* (0). |
 | 4. Test set | 20% of wines are put aside and not touched until the end. The split keeps the same share of good wines in both parts. |
 | 5. Grid search | Every combination of `max_depth` (2, 3, 5, 8, 12, no limit) and `min_samples_leaf` (1, 5, 10, 20) is tried. |
