@@ -88,7 +88,7 @@ pip install -r requirements.txt
 python experiment.py
 ```
 
-The run takes about 10 seconds. It prints a short summary and writes the tables to `results/` and the charts to `figures/`. The random seed is fixed, so every run gives the same numbers.
+The run takes about 10 seconds. It prints a short summary and writes the tables to `results/` and the charts to `figures/`. The random seed is fixed, so every run gives the same numbers. Tested with Python 3.13, scikit-learn 1.9, pandas 3.1, numpy 2.5 and matplotlib 3.11: a rerun reproduces the files in `results/` exactly.
 
 ## Method
 
